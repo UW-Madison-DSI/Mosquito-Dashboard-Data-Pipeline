@@ -10,6 +10,9 @@ The Mosquito Dashboard Data Pipeline is a mechanism for:
 2) transforming it to a target format, and 
 3) exporting it to the [Global Mosquito Observations Dashboard](https://mosquitodashboard.org) for storage and display.
 
+# The Global Mosquito Observations Dashboard
+The Global Mosquito Observations Dashboard is a project by the [University of Wisconsin](http://wisc.edu) and the [University of South Florida](https://www.usf.edu/) to build a platform to allow a comprehensive mapping of global mosquito observations.   It is funded by the [National Science Foundation](https://www.nsf.gov/).
+
 ![Screen Shot](images/screen-shots/mosquito-dashboard.png)
 Global Mosquito Observations Dashboard
 
