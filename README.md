@@ -22,13 +22,13 @@ The transformation scripts rely upon the Python3 platform.
 To run the data transformation scripts, simply go to the src directory and then the subdirectory for the data source that you would like to transform and run the file 'parser.py' followed by the name of the input file that you would like to transform.
 
 ```
-python3 src/habitat-mapper/parser.py data/input/input.csv data/output/output.csv
+python3 src/habitat-mapper/parser.py data/habitat-mapper/input/input.csv data/habitat-mapper/output/output.csv
 
-python3 src/inaturalist/parser.py data/input/input.json data/output/output.csv
+python3 src/inaturalist/parser.py data/inaturalist/input/input.json data/inaturalist/output/output.csv
 
-python3 src/land-cover/parser.py data/input/input.csv data/output/output.csv
+python3 src/land-cover/parser.py data/land-cover/input/input.csv data/land-cover/output/output.csv
 
-python3 src/mosquito-alert/parser.py data/input/input.csv data/output/output.csv
+python3 src/mosquito-alert/parser.py data/mosquito-alert/input/input.csv data/mosquito-alert/output/output.csv
 ```
 
 <!-- CONTACT -->
