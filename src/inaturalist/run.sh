@@ -1,0 +1,1 @@
+python3 parser.py ../../data/inaturalist/input/input.json ../../data/inaturalist/output/output.csv

@@ -1,0 +1,1 @@
+python3 parser.py ../../data/mosquito-alert/input/input.json ../../data/mosquito-alert/output/output.csv

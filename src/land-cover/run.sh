@@ -1,0 +1,1 @@
+python3 parser.py ../../data/land-cover/input/input.csv ../../data/land-cover/output/output.csv

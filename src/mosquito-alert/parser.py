@@ -1,0 +1,262 @@
+################################################################################
+#                                                                              #
+#                                  parser.py                                   #
+#                                                                              #
+################################################################################
+#                                                                              #
+#        This is a utility for parsing Moquito Alert data.                     #
+#                                                                              #
+#        Author(s): Abe Megahed                                                #
+#                                                                              #
+#        This file is subject to the terms and conditions defined in           #
+#        'LICENSE.txt', which is part of this source code distribution.        #
+#                                                                              #
+################################################################################
+#     Copyright (C) 2025, Data Science Institute, University of Wisconsin      #
+################################################################################
+
+import sys
+import json
+import csv
+
+#
+# globals
+#
+
+schema = '../../data/mosquito-alert/output/schema.txt'
+columns = []
+
+#
+# parsing functions
+#
+
+def get_observation_value(observation, key):
+	match key:
+
+		case 'OBJECTID':
+			return ''
+
+		case 'title':
+			return ''
+
+		case 'description':
+			return ''
+
+		case 'dataStreamName':
+			return ''
+
+		case 'dataStreamDescription':
+			return ''
+
+		case 'dataStreamObsType':
+			return ''
+
+		case 'dataStreamUniCategory':
+			return ''
+
+		case 'observationProObsUID':
+			return ''
+
+		case 'observationResCatObsPheTime':
+			return ''
+
+		case 'observationResCatObsResTime':
+			return ''
+
+		case 'observationResCatObsResult':
+			return ''
+
+		case 'obsResCatObsResult_Type':
+			return ''
+
+		case 'Identified by Human' | 'Indentified by Human':
+			return ''
+
+		case 'Identified by Machine' | 'Identified by Machine':
+			return ''
+
+		case 'observationResCatObsSubTime':
+			return ''
+
+		case 'observationImaImaStatus':
+			return ''
+
+		case 'observationImaImaResult':
+			return ''
+
+		case 'observationConParameters':
+			return ''
+
+		case 'Aegypti_Certainty':
+			return ''
+
+		case 'Tiger_Certainty':
+			return ''
+
+		case 'omProcessLicLicName':
+			return ''
+
+		case 'omProcessLicLicURI':
+			return ''
+
+		case 'omProcessLicLicAttSource':
+			return ''
+
+		case 'omProcessLicLicAttAggregator':
+			return ''
+
+		case 'omProcessProType' | 'omPrcoessProType':
+			return ''
+
+		case 'omProcessProReference':
+			return ''
+
+		case 'omProcessResQuaValStatus' | 'omPrcoessResQuaValStatus':
+			return ''
+
+		case 'omProcessResQuaValMethod' | 'omPrcoessResQuaValMethod':
+			return ''
+
+		case 'omProcessResQuaValResult' | 'omPrcoessResQuaValResult':
+			return ''
+
+		case 'omProcessResQuaQuaGrade' | 'omPrcoessResQuaQuaGrade':
+			return ''
+
+		case 'observedProName':
+			return ''
+
+		case 'observedProDescription':
+			return ''
+
+		case 'observedProDefinition':
+			return ''
+
+		case 'sensorName':
+			return ''
+
+		case 'sensorDescription':
+			return ''
+
+		case 'sensorEncType':
+			return ''
+
+		case 'locationName':
+			return ''
+
+		case 'locationDescription':
+			return ''
+
+		case 'locationEncType':
+			return ''
+
+		case 'latitude':
+			return ''
+
+		case 'longitude':
+			return ''
+
+		case 'thingName':
+			return ''
+
+		case 'thingDescription':
+			return ''
+
+		case 'featureIntName':
+			return ''
+
+		case 'featureIntDescription':
+			return ''
+
+		case 'featureIntEncType':
+			return ''
+
+		case 'featureIntLocation':
+			return ''
+
+		case 'type':
+			return ''
+
+		case 'coordinates':
+			return ''
+
+		case 'nuts_3':
+			return ''
+
+		case 'nuts_2':
+			return ''
+
+		case 'X':
+			return ''
+
+		case 'Y':
+			return ''
+
+		case _:
+			return ''
+
+	return ''
+
+def get_observation_values(observation):
+	values = []
+	for column in columns:
+		values.append(get_observation_value(observation, column))
+	return values
+
+#
+# utility functions
+#
+
+def read_file(filename):
+	with open(filename, 'r') as file:
+		data = file.read()
+	return data
+
+#
+# output functions
+#
+
+def write_csv(filename, observations):
+	with open(filename, 'w', newline='') as file:
+		writer = csv.writer(file)
+
+		# add headers
+		#
+		writer.writerow(columns)
+
+		# add columns
+		#
+		for observation in observations:
+			writer.writerow(get_observation_values(observation))
+
+#
+# main
+#
+
+if __name__ == '__main__':
+
+	# parse arguments
+	#
+	if (len(sys.argv) < 3):
+		print("Usage: python3 parser.py <input-file-name> <output-file-name");
+		exit();
+
+	# get command line arguments
+	#
+	filename = sys.argv[1]
+	outfilename = sys.argv[2]
+
+	# parse columns to read from schema
+	#
+	columns = []
+	with open(schema, 'r') as file:
+		for line in file:
+			columns.append(line.replace(',', '').replace('REQUIRED', '').replace('MANDATORY', '').strip())
+
+	# parse data from observations
+	#
+	observations = json.loads(read_file(filename))
+
+	# write transformed data to csv file
+	#
+	write_csv(outfilename, observations)
