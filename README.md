@@ -24,7 +24,7 @@ The transformation scripts rely upon the Python3 platform.
 
 ## Instructions
 
-To run the data transformation scripts, simply go to the src directory and then the subdirectory for the data source that you would like to transform.  Then, run the file 'parser.py' using the python3 interpreter followed by the path to the input file that you would like to transform and then the path to the desired output file where you would like the transformed data to be written.
+To run the data transformation scripts, simply run the appropriate 'parser.py' for the data source that you are interested in using the python3 interpreter followed by the path to the input file that you would like to transform and then the path to the desired output file where you would like the transformed data to be written.
 
 ```
 python3 src/habitat-mapper/parser.py \
@@ -42,6 +42,26 @@ python3 src/land-cover/parser.py \
 python3 src/mosquito-alert/parser.py \
   data/mosquito-alert/input/input.json \
   data/mosquito-alert/output/output.csv
+```
+
+There is also a utility to convert Trifacta recipes from text to json format to make them easier to read.  To run this utility run the file 'parser.py' in the src/trifacta directory using the python3 interpreter and give it the paths to the desired input and output files.
+
+```
+python3 src/trifacta/parser.py \
+  src/habitat-mapper/recipe.txt \
+  src/habitat-mapper/recipie.json
+
+python3 src/trifacta/parser.py \
+  src/inaturalist/recipe.txt \
+  src/inaturalist/recipie.json
+
+python3 src/trifacta/parser.py \
+  src/land-cover/recipe.txt \
+  src/land-cover/recipie.json
+
+python3 src/trifacta/parser.py \
+  src/mosquito-alert/recipe.txt \
+  src/mosquito-alert/recipie.json
 ```
 
 <!-- CONTACT -->
