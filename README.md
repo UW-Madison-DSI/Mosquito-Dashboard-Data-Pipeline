@@ -5,8 +5,10 @@
 </p>
 
 # Mosquito Dashboard Data Pipeline
-
-Mosquito Dashboard Datapipeline is a mechanism for ingesting data from a variety of data sources, reformatting it, and routing it to the [Global Mosquito Observations Dashboard](https://mosquitodashboard.org) for storage and display.
+The Mosquito Dashboard Data Pipeline is a mechanism for:
+1) importing data from a variety of data sources
+2) transforming it to a common format, and 
+3) exporting it to the [Global Mosquito Observations Dashboard](https://mosquitodashboard.org) for storage and display.
 
 ![Screen Shot](images/screen-shots/mosquito-dashboard.png)
 Global Mosquito Observations Dashboard
