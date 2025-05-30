@@ -50,19 +50,19 @@ There is also a utility to convert Trifacta recipes from text to json format to 
 ```
 python3 src/trifacta/parser.py \
   src/habitat-mapper/recipe.txt \
-  src/habitat-mapper/recipie.json
+  src/habitat-mapper/recipe.json
 
 python3 src/trifacta/parser.py \
   src/inaturalist/recipe.txt \
-  src/inaturalist/recipie.json
+  src/inaturalist/recipe.json
 
 python3 src/trifacta/parser.py \
   src/land-cover/recipe.txt \
-  src/land-cover/recipie.json
+  src/land-cover/recipe.json
 
 python3 src/trifacta/parser.py \
   src/mosquito-alert/recipe.txt \
-  src/mosquito-alert/recipie.json
+  src/mosquito-alert/recipe.json
 ```
 
 <!-- CONTACT -->
