@@ -15,6 +15,7 @@
 #     Copyright (C) 2025, Data Science Institute, University of Wisconsin      #
 ################################################################################
 
+import os
 import sys
 import json
 import csv
@@ -23,7 +24,8 @@ import csv
 # globals
 #
 
-schema = '../../data/inaturalist/output/schema.txt'
+current = os.path.dirname(os.path.abspath(__file__))
+schema = current + '/../../data/inaturalist/output/schema.txt'
 columns = []
 
 #

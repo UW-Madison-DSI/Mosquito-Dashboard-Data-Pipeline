@@ -15,6 +15,7 @@
 #     Copyright (C) 2025, Data Science Institute, University of Wisconsin      #
 ################################################################################
 
+import os
 import sys
 import json
 import csv
@@ -24,7 +25,8 @@ import uuid
 # globals
 #
 
-schema = '../../data/habitat-mapper/output/schema.txt'
+current = os.path.dirname(os.path.abspath(__file__))
+schema = current + '/../../data/habitat-mapper/output/schema.txt'
 columns = []
 count = 0
 
