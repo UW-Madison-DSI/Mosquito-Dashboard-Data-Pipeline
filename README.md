@@ -19,7 +19,7 @@ The transformation scripts rely upon the Python3 platform.
 
 ## Instructions
 
-To run the data transformation scripts, simply go to the src directory and then the subdirectory for the data source that you would like to transform and run the file 'parser.py' followed by the name of the input file that you would like to transform.
+To run the data transformation scripts, simply go to the src directory and then the subdirectory for the data source that you would like to transform.  Then, run the file 'parser.py' using the python3 interpreter followed by the path to the input file that you would like to transform and then the path to the desired output file where you would like the transformed data to be written.
 
 ```
 python3 src/habitat-mapper/parser.py \
