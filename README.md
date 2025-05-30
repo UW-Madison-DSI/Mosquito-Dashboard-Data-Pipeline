@@ -44,6 +44,7 @@ python3 src/mosquito-alert/parser.py \
   data/mosquito-alert/output/output.csv
 ```
 
+## Trifacta Recipes
 There is also a utility to convert Trifacta recipes from text to json format to make them easier to read.  To run this utility run the file 'parser.py' in the src/trifacta directory using the python3 interpreter and give it the paths to the desired input and output files.
 
 ```
